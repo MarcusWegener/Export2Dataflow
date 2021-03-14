@@ -59,8 +59,6 @@ $maxVersion = $installedPackages[0].Version
 Write-Host -ForegroundColor Gray "Load Assembly Files from insalled package Microsoft.AnalysisServices.retail.amd64..."
 $assemblyPathTabular = "$env:USERPROFILE\AppData\Local\PackageManagement\NuGet\Packages\Microsoft.AnalysisServices.retail.amd64.$maxVersion\lib\net45\Microsoft.AnalysisServices.Tabular.dll"
 
-
-
 Write-Host -ForegroundColor White  '========================================================================================================================'
 
 # Connect to Power BI Model
@@ -240,7 +238,6 @@ Write-Host -ForegroundColor Gray "`nWrite into JSON file..."
 $json | ConvertTo-Json -Depth 10 -Compress | Out-File -Encoding UTF8 "$fileName"
 
 Start-Process -FilePath C:\Windows\explorer.exe -ArgumentList "/select, ""$fileName"""
-
 
 Write-Host -ForegroundColor Gray "Dataflow model file ($fileName) created..."
 Write-Host -ForegroundColor White  '========================================================================================================================'
