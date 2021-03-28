@@ -274,8 +274,6 @@ $maxVersion = $installedPackages[0].Version
 Write-Host -ForegroundColor Gray "Load Assembly Files from insalled package Microsoft.AnalysisServices.retail.amd64..."
 $assemblyPathTabular = "$env:USERPROFILE\AppData\Local\PackageManagement\NuGet\Packages\Microsoft.AnalysisServices.retail.amd64.$maxVersion\lib\net45\Microsoft.AnalysisServices.Tabular.dll"
 
-
-
 Write-Host -ForegroundColor White  '========================================================================================================================'
 
 # Connect to Power BI Model

@@ -17,7 +17,7 @@ _C:\Program Files (x86)\Common Files\Microsoft Shared\Power BI Desktop\External 
 While copying the files, it can be that Windows asks you to login with admin privileges before you can continue. This is mandatory to copy the files. If you cannot do this yourself, please contact your administrator.
 
 ### Copy the PowerShell script
-Create a subfolder _Export2Dataflow_ in the _C:\Program Files\_ folder and copy the PowerShell script _Export2Dataflow.ps1_ file into it.
+Create a subfolder _Export2Dataflow_ in the _C:\Program Files\\_ folder and copy the PowerShell script _Export2Dataflow.ps1_ file into it.
 
 Identical to the previous step, Windows may ask you to authenticate with administrator privileges before you can proceed.
 
@@ -27,8 +27,13 @@ You have applied all required steps by now. The new buttons will appear in the P
 Did something not workout as expected for you, kindly check the FAQ to see if your question is already listed there. If not, please let me know.
 
 ## Usage
-
-
+I want to shortly describe how this tool works and what you can expect.
+1. Open a Power BI Desktop file whose Power Query transformations you want to export to a Dataflow.
+2. In the Top Ribbon under External Tools, click _Export to Dataflow_.
+3. After the click a PowerShell window opens which converts the Power Query transformations into the Dataflow JSON format. 
+During the first execution it may be necessary to agree to the installation of _nuget_ and the _package source_ for the installation of the latest Microsoft.AnalysisServices.Tabular.dll version.
+4. Then the script asks for the location where the Dataflow JSON file should be exported.
+5. The exported Dataflow JSON file can then be uploaded to the Power BI Portal as Dataflow. To do this, create a new dataflow in the workspace with the Import Datamodel option.
 
 ## Author
 Marcus Wegener 
@@ -71,7 +76,7 @@ External tools require Enhanced Meta Data to be enabled. You can enable this in 
 5. In the Global Settings go to Preview Features
 6. Close all Power BI Desktop instances and re-open Power BI.
 
-###I clicked the button, saw the PowerShell window flickering on the screen, but nothing happened
+### I clicked the button, saw the PowerShell window flickering on the screen, but nothing happened
 Most likely, this is caused by the execution policies for PowerShell configured on the computer. As far as I know, this is not something I can change in my script, but has everything to do with the setup of your PC or how your company configured it. This results in the fact that PowerShell.exe application did start, but it did not execute the script, because this was prevented by the policy. The solution to fix this, is changing the execution policy (which is a register thing on your computer. Please know, that this is all at your own risk! I cannot take any responsibility for this.
 
 The following steps might help you
