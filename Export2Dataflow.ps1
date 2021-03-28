@@ -141,7 +141,9 @@ function _showSelectionForm($mode, $workspace, $selectionList){
 
     #add selectionList to the listBox
     $listBox.Items.Clear()
-    [void] $listBox.Items.AddRange($selectionList)
+    if ($selectionList) {
+        [void] $listBox.Items.AddRange($selectionList)
+    }
 
     $form.Controls.Add($listBox)
 
@@ -459,8 +461,10 @@ if ($deployment  -eq 0) {
 
     $dataflowsInWorkspace = Get-PowerBIDataflow -Workspace $selectedWorkspace
 
+    $dataflowNames = $dataflowsInWorkspace | Select-Object -ExpandProperty Name
+
     do {
-        $dataflowName = _showSelectionForm -mode "dataflow" -workspace $workspaceName -selectionList $dataflowsInWorkspace.Name
+        $dataflowName = _showSelectionForm -mode "dataflow" -workspace $workspaceName -selectionList $dataflowNames 
 
         if ($dataflowName -eq $null) {
             [void] [System.Windows.MessageBox]::Show("You need to write at least 1 character"
