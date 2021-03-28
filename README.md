@@ -1,5 +1,5 @@
 # Export2Dataflow
-This repository contains everything needed to run the Export2Dataflow PowerShell script as an External Tool in the Power BI Desktop and export the Power Query to a Dataflow JSON file.
+This repository contains everything needed to run the Export2Dataflow PowerShell script as an External Tool in the Power BI Desktop and export the Power Query to a Dataflow JSON file or publishes it to the Power BI service.
 
 ## Disclaimer
 Please know, that everything I have created and shared on the blogpost and on GitHub is based on best effort. No rights can be derived, as well as I am not liable for the use or misuse of the solution or possible damage resulting from this. Use of the solutions and execution of the scripts is all on your own risk and your own responsibility.
@@ -7,10 +7,11 @@ Please know, that everything I have created and shared on the blogpost and on Gi
 ## Getting Started
 ### Download everything you need from this repository.
 * External Tool integration file: _export2dataflow.pbitool.json_
+* External Tool integration file: _publish2dataflow.pbitool.json_
 * The PowerShell script: _Export2Dataflow.ps1_
 
 ### Copy the External Tool integration file
-The External Tool integration file is needed to get the button in the Power BI ribbon. In order to achieve this, you need to copy the _export2dataflow.pbitool.json_ file in the External Tools folder. For me this location was:
+The External Tool integration file is needed to get the button in the Power BI ribbon. In order to achieve this, you need to copy the _export2dataflow.pbitool.json_ and _publish2dataflow.pbitool.json_ file in the External Tools folder. For me this location was:
 _C:\Program Files (x86)\Common Files\Microsoft Shared\Power BI Desktop\External Tools_
 
 While copying the files, it can be that Windows asks you to login with admin privileges before you can continue. This is mandatory to copy the files. If you cannot do this yourself, please contact your administrator.
@@ -21,7 +22,7 @@ Create a subfolder _Export2Dataflow_ in the _C:\Program Files\_ folder and copy 
 Identical to the previous step, Windows may ask you to authenticate with administrator privileges before you can proceed.
 
 ### Restart Power BI Desktop
-You have applied all required steps by now. A new button will appear in the Power BI Desktop top ribbon for External Tools. In case you had Power BI running already, please restart Power BI desktop first.
+You have applied all required steps by now. The new buttons will appear in the Power BI Desktop top ribbon for External Tools. In case you had Power BI running already, please restart Power BI desktop first.
 
 Did something not workout as expected for you, kindly check the FAQ to see if your question is already listed there. If not, please let me know.
 
