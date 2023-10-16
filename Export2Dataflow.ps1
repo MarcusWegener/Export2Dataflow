@@ -6,8 +6,8 @@
 	TOM (Tabular Object Model) and stores them in the Dataflow JSON format or publishes it to the Power BI service.
 .NOTES
     File Name	: Export2Dataflow.ps1
-	Date		: 03/28/2021
-	Version		: 1.1.0 
+	Date		: 10/16/2023
+	Version		: 1.1.1 
     Author		: Marcus Wegener
 
 	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
@@ -268,7 +268,7 @@ Write-Host -ForegroundColor White  "Database: " $database
 Write-Host -ForegroundColor White  '========================================================================================================================'
 Write-Host -ForegroundColor Gray  "Install latest package (if not already installed) of Microsoft.AnalysisServices.retail.amd64 for current user..."
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Install-Package Microsoft.AnalysisServices.retail.amd64 -Scope CurrentUser -Source "https://www.nuget.org/api/v2"
+Install-Package Microsoft.AnalysisServices.retail.amd64 -Scope CurrentUser -Source "https://www.nuget.org/api/v2" -SkipDependencies
 $installedPackages = Find-Package -Name Microsoft.AnalysisServices.retail.amd64 -Source "$env:USERPROFILE\AppData\Local\PackageManagement\NuGet\Packages\" -AllVersions
 $maxVersion = $installedPackages[0].Version
 
